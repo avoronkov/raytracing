@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A574E645-495F-45F1-8959-BE12E8C085FC}</ProjectGuid>
+    <RootNamespace>FIT_6203_Voronkov_Ray</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="FIT_6203_Voronkov_Ray.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Box.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Camera.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Color.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_DialogOptions.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Eye.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Img.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Io.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Light.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Matrix.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Params.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Point.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Polygon.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Primitive.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Quadric.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_QuadroBox.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Ray.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_RenderSet.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Scene.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Segment.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_Sphere.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_Ray_WireFrame.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_RayDoc.cpp" />
+    <ClCompile Include="FIT_6203_Voronkov_RayView.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FIT_6203_Voronkov_Ray.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Box.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Camera.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Color.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_DialogOptions.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Eye.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Img.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Io.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Light.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Matrix.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Params.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Point.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Polygon.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Primitive.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Quadric.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_QuadroBox.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Ray.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_RenderSet.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Scene.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Segment.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_Sphere.h" />
+    <ClInclude Include="FIT_6203_Voronkov_Ray_WireFrame.h" />
+    <ClInclude Include="FIT_6203_Voronkov_RayDoc.h" />
+    <ClInclude Include="FIT_6203_Voronkov_RayView.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\FIT_6203_Voronkov_Ray.ico" />
+    <None Include="res\FIT_6203_Voronkov_Ray.rc2" />
+    <None Include="res\FIT_6203_Voronkov_RayDoc.ico" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FIT_6203_Voronkov_Ray.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="FIT_6203_Voronkov_Ray.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
