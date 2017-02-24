@@ -20,7 +20,10 @@ SOURCES += main.cpp\
     model/color.cpp \
     model/wireframe.cpp \
     model/light.cpp \
-    model/primitive.cpp
+    model/primitive.cpp \
+    model/box.cpp \
+    model/eye.cpp \
+    model/matrix.cpp
 
 HEADERS  += mainwindow.h \
     model/point.h \
@@ -29,6 +32,9 @@ HEADERS  += mainwindow.h \
     model/color.h \
     model/wireframe.h \
     model/light.h \
-    model/primitive.h
+    model/primitive.h \
+    model/box.h \
+    model/eye.h \
+    model/matrix.h
 
 FORMS    += mainwindow.ui

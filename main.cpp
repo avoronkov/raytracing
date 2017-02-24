@@ -8,6 +8,7 @@
 #include "model/color.h"
 #include "model/wireframe.h"
 #include "model/light.h"
+#include "model/box.h"
 
 int main(int argc, char *argv[])
 {
@@ -20,6 +21,8 @@ int main(int argc, char *argv[])
     rt::model::Color c;
     rt::model::WireFrame wf;
     rt::model::Light l;
+
+    rt::model::Box b;
 
     MainWindow w;
     w.show();

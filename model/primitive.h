@@ -16,24 +16,26 @@ class Primitive
     Color _kD; // diffuse factor
     Color _kS; // specular factor
 
-    double m_power;
+    double _power;
 
-    double m_kt;
+    double _kt;
 
-    double m_n_outside;
-    double m_n_inside;
+    double _n_outside;
+    double _n_inside;
 
-    Ray m_ray;
-
+protected:
+    Ray _ray;
     bool has_intersection;
-    Point m_intersection;
-    Point m_normal;
-    Point m_reflected;
+    Point _intersection;
+    Point _normal;
+
+private:
+    Point _reflected;
     bool has_refracted;
-    Point m_refracted;
+    Point _refracted;
 
-    double m_t;
-
+protected:
+    double _t; // ??
     bool ray_from_outside;
 
 public:
@@ -48,7 +50,7 @@ public:
     const Color & getDiffuseFactor() const { return _kD; }
     const Color & getSpecularFactor() const { return _kS; }
 
-    const double & getPower() const{return m_power;}
+    const double & getPower() const{return _power;}
 
     virtual void intersect(const Ray & ray);
 
@@ -58,12 +60,12 @@ public:
     bool calculateRefracted();
 
     virtual bool hasIntersection()const {return has_intersection;}
-    virtual const Point & getIntersection()const {return m_intersection;}
-    virtual const double & getT()const {return m_t;}
-    virtual const Point & getNormal()const {return m_normal;}
-    virtual const Point & getReflected()const {return m_reflected;}
+    virtual const Point & getIntersection()const {return _intersection;}
+    virtual const double & getT()const {return _t;}
+    virtual const Point & getNormal()const {return _normal;}
+    virtual const Point & getReflected()const {return _reflected;}
     virtual bool hasRefracted()const {return has_refracted;}
-    virtual const Point & getRefracted()const {return m_refracted;}
+    virtual const Point & getRefracted()const {return _refracted;}
 
     virtual bool isCorrect()const = 0;
 

@@ -8,30 +8,19 @@ void Primitive::setOptics
         (double k_Ar, double k_Ag, double k_Ab, double k_Dr, double k_Dg, double k_Db,
         double k_Sr, double k_Sg, double k_Sb, double power, double kt, double no, double ni)
 {
-    //m_k_Ar = k_Ar;
-    //m_k_Ag = k_Ag;
-    //m_k_Ab = k_Ab;
     _kA = Color (k_Ar, k_Ag, k_Ab);
-
-    //m_k_Dr = k_Dr;
-    //m_k_Dg = k_Dg;
-    //m_k_Db = k_Db;
     _kD = Color (k_Dr, k_Dg, k_Db);
-
-    //m_k_Sr = k_Sr;
-    //m_k_Sg = k_Sg;
-    //m_k_Sb = k_Sb;
     _kS = Color (k_Sr, k_Sg, k_Sb);
 
-    m_power = power;
-    m_kt = kt;
-    m_n_outside = ni;
-    m_n_inside = no;
+    _power = power;
+    _kt = kt;
+    _n_outside = ni;
+    _n_inside = no;
 }
 
 void Primitive::intersect(const Ray & ray)
 {
-    m_ray = ray;
+    _ray = ray;
     if (!this->isCorrect()) {
         Q_ASSERT(false);
         return;
@@ -47,8 +36,8 @@ void Primitive::intersect(const Ray & ray)
 bool Primitive::calculateReflected()
 {
     if (!has_intersection) return false;
-    Point incident_ray = - (m_ray.getDirection());
-    m_reflected = m_normal * 2.0 * (m_normal * incident_ray) - incident_ray;
+    Point incident_ray = - (_ray.getDirection());
+    _reflected = _normal * 2.0 * (_normal * incident_ray) - incident_ray;
 
     return true;
 }
@@ -59,30 +48,30 @@ bool Primitive::calculateRefracted()
     if (ray_from_outside)
     {
         // normal outside
-        Point incident_ray = -m_ray.getDirection();
-        double n_it = m_n_outside / m_n_inside;
-        double cos_teta = ( m_normal * incident_ray);
+        Point incident_ray = -_ray.getDirection();
+        double n_it = _n_outside / _n_inside;
+        double cos_teta = ( _normal * incident_ray);
         double D = 1.0 + n_it * n_it * (cos_teta * cos_teta - 1.0);
         if (D <= 0.0){
             has_refracted = false;
             return false;
         }
-        m_refracted = -incident_ray * n_it + m_normal * (n_it * cos_teta - qSqrt (D));
+        _refracted = -incident_ray * n_it + _normal * (n_it * cos_teta - qSqrt (D));
         has_refracted = true;
     }
     else
     {
         // from the inside
-        Point incident_ray = -m_ray.getDirection();
-        double n_it = m_n_inside / m_n_outside;
-        Point normal = -m_normal;
+        Point incident_ray = -_ray.getDirection();
+        double n_it = _n_inside / _n_outside;
+        Point normal = -_normal;
         double cos_teta = ( normal * incident_ray);
         double D = 1.0 + n_it * n_it * (cos_teta * cos_teta - 1.0);
         if (D <= 0.0){
             has_refracted = false;
             return false;
         }
-        m_refracted = -incident_ray * n_it + normal * (n_it * cos_teta - qSqrt (D));
+        _refracted = -incident_ray * n_it + normal * (n_it * cos_teta - qSqrt (D));
         has_refracted = true;
     }
     return true;
