@@ -23,7 +23,9 @@ SOURCES += main.cpp\
     model/primitive.cpp \
     model/box.cpp \
     model/eye.cpp \
-    model/matrix.cpp
+    model/matrix.cpp \
+    model/camera.cpp \
+    model/sphere.cpp
 
 HEADERS  += mainwindow.h \
     model/point.h \
@@ -35,6 +37,8 @@ HEADERS  += mainwindow.h \
     model/primitive.h \
     model/box.h \
     model/eye.h \
-    model/matrix.h
+    model/matrix.h \
+    model/camera.h \
+    model/sphere.h
 
 FORMS    += mainwindow.ui

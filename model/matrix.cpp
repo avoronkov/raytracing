@@ -78,18 +78,7 @@ void Matrix::createMproj(double Sw, double Sh, double zf, double zb)
     m[3][2] = 1.0;
 }
 
-Matrix& Matrix::operator=
-    (const Matrix & another)
-{
-    for (int i=0; i<4; i++){
-        for (int j=0; j<4; j++){
-            m[i][j] = another.m[i][j];
-        }
-    }
-    return *this;
-}
-Matrix Matrix::operator*
-    (const Matrix & another) const
+Matrix Matrix::operator*(const Matrix & another) const
 {
     Matrix mtx;
     for (int i=0; i<4; i++)

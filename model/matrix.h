@@ -14,8 +14,9 @@ public:
     double m[4][4];
 public:
     Matrix();
-    Matrix(const Matrix &);
+    Matrix(const Matrix &) = default;
     ~Matrix() = default;
+    Matrix& operator=(const Matrix & another) = default;
 
     void createTranslate(double tx, double ty, double tz);
     void createScale(double sx, double sy, double sz);
@@ -24,7 +25,6 @@ public:
     void createRotateZ(double radian);
     void createMproj(double Sw, double Sh, double zf, double zb);
 
-    Matrix& operator=(const Matrix & another);
     Matrix operator*(const Matrix & another) const;
     Point operator*(const Point & another) const;
     Segment operator*(const Segment & another) const;
