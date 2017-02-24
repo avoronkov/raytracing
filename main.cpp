@@ -7,6 +7,7 @@
 #include "model/ray.h"
 #include "model/color.h"
 #include "model/wireframe.h"
+#include "model/light.h"
 
 int main(int argc, char *argv[])
 {
@@ -18,6 +19,7 @@ int main(int argc, char *argv[])
     rt::model::Ray r(s, f);
     rt::model::Color c;
     rt::model::WireFrame wf;
+    rt::model::Light l;
 
     MainWindow w;
     w.show();

@@ -18,13 +18,17 @@ SOURCES += main.cpp\
     model/segment.cpp \
     model/ray.cpp \
     model/color.cpp \
-    model/wireframe.cpp
+    model/wireframe.cpp \
+    model/light.cpp \
+    model/primitive.cpp
 
 HEADERS  += mainwindow.h \
     model/point.h \
     model/segment.h \
     model/ray.h \
     model/color.h \
-    model/wireframe.h
+    model/wireframe.h \
+    model/light.h \
+    model/primitive.h
 
 FORMS    += mainwindow.ui
