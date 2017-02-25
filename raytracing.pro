@@ -25,7 +25,10 @@ SOURCES += main.cpp\
     model/eye.cpp \
     model/matrix.cpp \
     model/camera.cpp \
-    model/sphere.cpp
+    model/sphere.cpp \
+    model/polygon.cpp \
+    model/quadric.cpp \
+    model/quadrobox.cpp
 
 HEADERS  += mainwindow.h \
     model/point.h \
@@ -39,6 +42,10 @@ HEADERS  += mainwindow.h \
     model/eye.h \
     model/matrix.h \
     model/camera.h \
-    model/sphere.h
+    model/sphere.h \
+    model/polygon.h \
+    model/common.h \
+    model/quadric.h \
+    model/quadrobox.h
 
 FORMS    += mainwindow.ui

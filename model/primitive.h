@@ -28,9 +28,9 @@ protected:
     bool has_intersection;
     Point _intersection;
     Point _normal;
+    Point _reflected;
 
 private:
-    Point _reflected;
     bool has_refracted;
     Point _refracted;
 
