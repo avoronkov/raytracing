@@ -28,7 +28,10 @@ SOURCES += main.cpp\
     model/sphere.cpp \
     model/polygon.cpp \
     model/quadric.cpp \
-    model/quadrobox.cpp
+    model/quadrobox.cpp \
+    model/renderset.cpp \
+    io/io.cpp \
+    model/scene.cpp
 
 HEADERS  += mainwindow.h \
     model/point.h \
@@ -46,6 +49,9 @@ HEADERS  += mainwindow.h \
     model/polygon.h \
     model/common.h \
     model/quadric.h \
-    model/quadrobox.h
+    model/quadrobox.h \
+    model/renderset.h \
+    io/io.h \
+    model/scene.h
 
 FORMS    += mainwindow.ui
