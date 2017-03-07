@@ -1,20 +1,18 @@
 #ifndef IO_H
 #define IO_H
 
+#include <QFile>
+#include <QTextStream>
 
-#include <QIODevice>
-
+#include "model/scene.h"
 
 namespace rt { namespace io {
 
-class IO
-{
-public:
-    IO() = delete;
+bool loadSceneFile(QFile *, rt::model::Scene *);
+bool loadSceneStream(QTextStream *, rt::model::Scene *);
 
-    // static boolLoadScene(QIODevice *, Scene *);
 
-};
+
 
 }}
 
