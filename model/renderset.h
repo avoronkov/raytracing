@@ -12,14 +12,15 @@ enum class Quality { ROUGH = 0, NORMAL = 1, FINE = 2 };
 
 class RenderSet
 {
-    Camera m_camera;
-    QSize m_scroll_size;
-    QColor m_background;
     double m_gamma;
     int m_tree;
     Quality m_quality;
+
+    QColor m_background;
+    Camera m_camera;
+    QSize m_scroll_size;
 public:
-    RenderSet(): m_gamma{1.0}, m_tree{3} {}
+    RenderSet();
     RenderSet(const RenderSet &) = default;
     ~RenderSet() = default;
 

@@ -31,7 +31,9 @@ SOURCES += main.cpp\
     model/quadrobox.cpp \
     model/renderset.cpp \
     io/io.cpp \
-    model/scene.cpp
+    model/scene.cpp \
+    ctrl/doc.cpp \
+    ctrl/params.cpp
 
 HEADERS  += mainwindow.h \
     model/point.h \
@@ -52,6 +54,8 @@ HEADERS  += mainwindow.h \
     model/quadrobox.h \
     model/renderset.h \
     io/io.h \
-    model/scene.h
+    model/scene.h \
+    ctrl/doc.h \
+    ctrl/params.h
 
 FORMS    += mainwindow.ui
