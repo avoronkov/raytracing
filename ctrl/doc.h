@@ -54,11 +54,14 @@ public:
     void moveZoom(int gradation);
 
 public slots:
-    void loadSceneFromFile(const QString & filename);
+    void loadSceneFromFile(QString filename);
 
 signals:
     void changed();
+
     void warning(QString);
+    void information(QString);
+    void error(QString);
 };
 
 }}

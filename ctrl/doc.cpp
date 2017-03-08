@@ -31,7 +31,7 @@ bool Doc::initRenderSet()
     return true;
 }
 
-void Doc::loadSceneFromFile(const QString & filename)
+void Doc::loadSceneFromFile(QString filename)
 {
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -52,6 +52,7 @@ void Doc::loadSceneFromFile(const QString & filename)
     prepareWireFrame(render_set);
 
     emit changed();
+    emit information(QString("Scene is loaded from ") + filename);
 }
 
 bool Doc::prepareWireFrame(const RenderSet & set)

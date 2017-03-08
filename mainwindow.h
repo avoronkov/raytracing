@@ -18,6 +18,13 @@ public:
 public slots:
     void openFile();
 
+    void showInfo(QString);
+    void showWarning(QString);
+    void showError(QString);
+
+signals:
+    void toOpenFile(QString);
+
 private:
     Ui::MainWindow *ui;
 };
