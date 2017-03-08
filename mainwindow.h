@@ -7,6 +7,8 @@ namespace Ui {
 class MainWindow;
 }
 
+#include "ctrl/doc.h"
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -15,6 +17,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    void setDoc(rt::ctrl::Doc *);
+
 public slots:
     void openFile();
 
@@ -22,11 +26,15 @@ public slots:
     void showWarning(QString);
     void showError(QString);
 
+    void updateView();
+
 signals:
     void toOpenFile(QString);
 
 private:
     Ui::MainWindow *ui;
+
+    rt::ctrl::Doc * doc;
 };
 
 #endif // MAINWINDOW_H

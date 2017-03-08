@@ -90,12 +90,12 @@ double Point::operator*(const Point & p) const {
 }
 
 double Point::get(int idx) const {
-    Q_ASSERT(idx >= 0 && idx < 3);
+    Q_ASSERT(idx >= 0 && idx < 4);
     return v[idx];
 }
 
 void Point::set(int idx, double value) {
-    Q_ASSERT(idx >= 0 && idx < 3);
+    Q_ASSERT(idx >= 0 && idx < 4);
     v[idx] = value;
 }
 

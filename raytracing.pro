@@ -33,7 +33,8 @@ SOURCES += main.cpp\
     io/io.cpp \
     model/scene.cpp \
     ctrl/doc.cpp \
-    ctrl/params.cpp
+    ctrl/params.cpp \
+    view/display.cpp
 
 HEADERS  += mainwindow.h \
     model/point.h \
@@ -56,6 +57,7 @@ HEADERS  += mainwindow.h \
     io/io.h \
     model/scene.h \
     ctrl/doc.h \
-    ctrl/params.h
+    ctrl/params.h \
+    view/display.h
 
 FORMS    += mainwindow.ui

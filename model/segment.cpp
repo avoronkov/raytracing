@@ -84,3 +84,12 @@ void Segment::normalizeW()
 }
 
 }} // namespace rt::model
+
+QDebug operator<<(QDebug debug, const rt::model::Segment& seg) {
+    QDebugStateSaver saver(debug);
+    const rt::model::Point & s = seg.start();
+    const rt::model::Point & f = seg.finish();
+    debug.nospace() << "Segment((" << s.x() << ", " << s.y() << ", " << s.z() << "), ("
+                    << f.x() << ", " << f.y() << ", " << f.z() << "))";
+    return debug;
+}

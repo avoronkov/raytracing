@@ -31,7 +31,9 @@ class Doc : public QObject
 
     // Attributes
 
+public:
     Params params;
+private:
     rt::model::RenderSet render_set;
     rt::model::WireFrame m_wire_frame_start; // первоначальное состояние сцены
     rt::model::WireFrame m_wire_frame_finish; // финальное состояние сцены
@@ -52,6 +54,8 @@ public:
     rt::model::Color renderRay(const rt::model::Ray &, int depth, double * distance_out);
 
     void moveZoom(int gradation);
+
+    const rt::model::WireFrame & getFinalSceneWireframe() const { return m_wire_frame_finish; }
 
 public slots:
     void loadSceneFromFile(QString filename);

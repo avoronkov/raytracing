@@ -45,4 +45,6 @@ public:
 
 }}
 
+QDebug operator<<(QDebug debug, const rt::model::Segment& seg);
+
 #endif // SEGMENT_H
