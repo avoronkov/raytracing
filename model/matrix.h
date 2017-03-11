@@ -6,6 +6,8 @@
 #include "model/eye.h"
 #include "model/wireframe.h"
 
+#include <QDebug>
+
 namespace rt { namespace model {
 
 class Matrix
@@ -24,6 +26,8 @@ public:
     void createRotateY(double radian);
     void createRotateZ(double radian);
     void createMproj(double Sw, double Sh, double zf, double zb);
+    void createIdentity();
+    static Matrix identity();
 
     Matrix operator*(const Matrix & another) const;
     Point operator*(const Point & another) const;
@@ -42,5 +46,7 @@ private:
 };
 
 }}
+
+QDebug operator<<(QDebug, const rt::model::Matrix &);
 
 #endif // MATRIX_H

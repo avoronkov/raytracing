@@ -98,12 +98,11 @@ void Display::drawSegment(const rt::model::Segment & segment, bool colorful)
     }
     qInfo() << "drawSegment(" << s1 << ")";
     s1.normalizeW();
-    qInfo() << "s1.normalizeW = " << s1;
     Segment s;
     if (! clipSegment(s1, &s) ) {
+        qInfo() << "!clipSegment(" << s1 << ")";
         return;
     }
-    qInfo() << "clipSegment s1 " << s;
     // TODO initialize view_port
     int start_x = (int)((s.start().x() + 1.0) * view_port.width() / 2.0 + offset + 1.5);
 //  start.y = (int)((s.start().y() + 1.0) * view_port.cy / 2.0 + offset + 1.5);

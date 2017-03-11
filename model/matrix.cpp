@@ -78,6 +78,21 @@ void Matrix::createMproj(double Sw, double Sh, double zf, double zb)
     m[3][2] = 1.0;
 }
 
+void Matrix::createIdentity()
+{
+    clear();
+    for (int i: {0, 1, 2, 3}) {
+        m[i][i] = 1.0;
+    }
+}
+
+Matrix Matrix::identity() {
+    Matrix m;
+    m.createIdentity();
+    return m;
+}
+
+
 Matrix Matrix::operator*(const Matrix & another) const
 {
     Matrix mtx;
@@ -189,3 +204,13 @@ void Matrix::clear()
 }
 
 }}
+
+QDebug operator<<(QDebug out, const rt::model::Matrix & m) {
+    for (int i: {0, 1, 2, 3}) {
+        for (int j: {0, 1, 2, 3}) {
+            out << m.getRaw(i, j);
+        }
+        out << "\n";
+    }
+    return out;
+}

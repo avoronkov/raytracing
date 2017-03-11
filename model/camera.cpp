@@ -1,8 +1,10 @@
 #include "camera.h"
 
+#include <QDebug>
+
 namespace rt { namespace model {
 
-Camera::Camera(): Camera{0, Matrix{}}
+Camera::Camera(): Camera{0, Matrix::identity()}
 {
 
 }
