@@ -92,6 +92,19 @@ Matrix Matrix::identity() {
     return m;
 }
 
+Matrix Matrix::rotateX(double radian)
+{
+    Matrix r;
+    r.createRotateX(radian);
+    return r;
+}
+
+Matrix Matrix::rotateY(double radian)
+{
+    Matrix r;
+    r.createRotateY(radian);
+    return r;
+}
 
 Matrix Matrix::operator*(const Matrix & another) const
 {

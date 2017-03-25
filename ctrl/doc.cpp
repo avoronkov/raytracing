@@ -19,7 +19,9 @@ using rt::model::Matrix;
 
 Doc::Doc():
     m_scene_loaded{false},
-    m_wire_frame_loaded{false}
+    m_wire_frame_loaded{false},
+    m_rotate_x{Matrix::identity()},
+    m_rotate_y{Matrix::identity()}
 {
 
 }
@@ -98,12 +100,26 @@ bool Doc::prepareWireFrame(const RenderSet & set)
     const Matrix & rotate = camera.matrixRotate();
 
     m_proj.createMproj(params.s_w, params.s_h, params.z_near, params.z_far);
-    m_pre_final = m_trans_forward * rotate * m_trans_to_center;
+    m_pre_final = m_trans_forward * rotate * m_rotate_x * m_rotate_y * m_trans_to_center;
     m_final = m_proj * m_pre_final;
 
     m_wire_frame_finish = m_final * m_wire_frame_start;
 
     return true;
+}
+
+void Doc::rotateScene(double dx, double dy)
+{
+    m_rotate_x *= Matrix::rotateX(dx);
+    m_rotate_y *= Matrix::rotateY(dy);
+    prepareWireFrame(render_set);
+    emit changed();
+}
+
+void Doc::moveSceneForward(double dz)
+{
+
+
 }
 
 }}

@@ -57,6 +57,9 @@ public:
 
     const rt::model::WireFrame & getFinalSceneWireframe() const { return m_wire_frame_finish; }
 
+    void rotateScene(double dx, double dy);
+    void moveSceneForward(double dz);
+
 public slots:
     void loadSceneFromFile(QString filename);
 

@@ -24,10 +24,10 @@ private:
 public:
     explicit Display(QWidget *parent = 0);
 
-    virtual void paintEvent(QPaintEvent *) override;
-
     void setDocument(rt::ctrl::Doc *);
 
+    virtual void paintEvent(QPaintEvent *) override;
+    virtual void keyPressEvent(QKeyEvent *event) override;
 signals:
 
 public slots:

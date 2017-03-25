@@ -29,6 +29,9 @@ public:
     void createIdentity();
     static Matrix identity();
 
+    static Matrix rotateX(double radian);
+    static Matrix rotateY(double radian);
+
     Matrix operator*(const Matrix & another) const;
     Point operator*(const Point & another) const;
     Segment operator*(const Segment & another) const;

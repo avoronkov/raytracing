@@ -15,7 +15,7 @@ Display::Display(QWidget *parent):
     doc{nullptr},
     offset{10}
 {
-
+    setFocusPolicy(Qt::StrongFocus);
 }
 
 void Display::setDocument(rt::ctrl::Doc * d) {
@@ -98,11 +98,11 @@ void Display::drawSegment(const rt::model::Segment & segment, bool colorful)
     }
     qInfo() << "drawSegment(" << s1 << ")";
     s1.normalizeW();
-    Segment s;
-    if (! clipSegment(s1, &s) ) {
+    Segment s = s1;
+    /*if (! clipSegment(s1, &s) ) {
         qInfo() << "!clipSegment(" << s1 << ")";
         return;
-    }
+    }*/
     // TODO initialize view_port
     int start_x = (int)((s.start().x() + 1.0) * view_port.width() / 2.0 + offset + 1.5);
 //  start.y = (int)((s.start().y() + 1.0) * view_port.cy / 2.0 + offset + 1.5);
@@ -321,5 +321,23 @@ void Display::drawBorder()
     painter.drawRect(offset, offset, raster_size.width() - 2*offset, raster_size.height() - 2*offset);
 }
 
+void Display::keyPressEvent(QKeyEvent *event)
+{
+    qInfo() << "keyPressEvent: " << event->key();
+    switch(event->key()) {
+    case Qt::Key_Left:
+        doc->rotateScene(0, -0.1);
+        break;
+    case Qt::Key_Right:
+        doc->rotateScene(0, 0.1);
+        break;
+    case Qt::Key_Up:
+        doc->rotateScene(-0.1, 0);
+        break;
+    case Qt::Key_Down:
+        doc->rotateScene(0.1, 0);
+        break;
+    }
+}
 
 }}
